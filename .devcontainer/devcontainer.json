@@ -1,0 +1,39 @@
+{
+    "name": "vscode-atcoder-scala",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".",
+        "args": {
+            "SCALA_USERNAME": "atcoder",
+            "SCALA_USER_UID": "1000",
+            "SCALA_USER_GID": "1000",
+            "SCALA_WORKDIR_NAME": "app"
+        }
+    },
+    "runArgs": [
+        "--name",
+        "vscode-atcoder-scala",
+        "--hostname",
+        "scala"
+    ],
+    "mounts": [
+        {
+            "type": "bind",
+            "source": "${localWorkspaceFolder}",
+            "target": "/home/atcoder/app"
+        }
+    ],
+    "containerUser": "atcoder",
+    "workspaceFolder": "/home/atcoder/app",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "scalameta.metals",
+                "vscjava.vscode-java-test"
+            ],
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash"
+            }
+        }
+    }
+}

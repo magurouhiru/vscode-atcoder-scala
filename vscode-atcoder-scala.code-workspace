@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"editor.formatOnSave": true,
+		"[scala]": {
+			"editor.defaultFormatter": "scalameta.metals"
+		},
+		"files.watcherExclude": {
+			"**/target": true
+		}
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode-remote.remote-containers"
+		]
+	}
+}
